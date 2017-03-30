@@ -7,29 +7,39 @@ var utils = {
     }
 };
 
-var casper = require('casper').create({
+/*var casper = require('casper').create({
     pageSettings: {
         //loadImages: false,
         //loadPlugins: false
     }
-});
+});*/
 
-casper.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36");
+casper.test.begin('Login to Food Campaign and change country to FJ', function suite(test) {
 
-casper.test.begin('Login to Food Campaign and change country to FJ', 2, function suite(test) {
+    casper.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36");
 
     casper.start(config.baseUrl, function () {
-        test.assertTitleMatches(/allocation/i);
         casper.viewport(1920, 1080);
         casper.zoom(0.8);
+        test.assertTitleMatches(/allocation/i);
     });
 
     // login
     casper.then(function () {
         utils.log('Logging in');
-        casper.sendKeys('input[name="_58_login"]', config.username);
-        casper.sendKeys('input[name="_58_password"]', config.password);
-        casper.click('input[name="btn_login"]');
+
+        var loginInputSelector = 'input[name="_58_login"]';
+        var passwordInputSelector = 'input[name="_58_password"]';
+        var loginButtonSelector = 'input[name="btn_login"]';
+
+        test.assertElementCount(loginInputSelector, 1);
+        test.assertElementCount(passwordInputSelector, 1);
+        test.assertElementCount(loginButtonSelector, 1);
+
+        casper.sendKeys(loginInputSelector, config.username);
+        casper.sendKeys(passwordInputSelector, config.password);
+        casper.click(loginButtonSelector);
+
         casper.waitForSelector('#main-content');
     });
 
@@ -53,5 +63,7 @@ casper.test.begin('Login to Food Campaign and change country to FJ', 2, function
         casper.capture('screenshot.png');
     });
 
-    casper.run();
+    casper.run(function () {
+        test.done();
+    });
 });
