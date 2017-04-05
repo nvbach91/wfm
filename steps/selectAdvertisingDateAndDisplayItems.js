@@ -3,6 +3,7 @@
  */
 casper.test.begin('Selecting Advertising Date', function suite(test) {
     casper.then(function () {
+        
 casper.mlog('Selecting Advertising Date and search for items in it');
         casper.evaluate(function (config) {
             var advertisingDateSelect = jQuery('#campaign_items_filter select[name="advertising-date-select"]');

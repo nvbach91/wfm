@@ -10,7 +10,14 @@ casper.start(config.baseUrl, function () {
 
 casper.mlog = function (msg) { 
     casper.echo('[' + new Date().toISOString().slice(11, -1) + '] ' + msg, 'INFO'); 
-;}
+};
+
+casper.record = function () {
+    if (config.recordVideo) {
+        casper.capture(config.screenshotFilePath + 'record' + config.screenshotFileExtension);
+    }
+};
+
 
 require('./steps/login');
 require('./steps/goToFoodCampaignsTab');

@@ -2,7 +2,6 @@
  * Login at the provided address with the provided credentials
  */
 casper.test.begin('WFM Login', function suite(test) {
-    // login
     casper.then(function () {
         test.assertTitleMatches(/allocation/i);
 

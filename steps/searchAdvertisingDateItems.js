@@ -13,7 +13,6 @@ var search = function (searchValue) {
             //casper.wait(500, function () {
                 test.assertVisible(tooltipSelector, 'Advertising items search tooltip is visible on mouse hover');
                 test.assertSelectorHasText(tooltipSelector, tooltipText, 'Tooltip pop-up contains required text');
-            //    casper.capture('tooltip.png');
             //});
 
             var searchInputSelector = '.item-search input[name="item-search:advertising-item-search"]';
@@ -43,6 +42,8 @@ var search = function (searchValue) {
                         var item = resultRows.eq(i);
                         var itemNumber = item.find('td').eq(0).text().trim();
                         var itemDesc = item.find('td').eq(1).text().trim();
+                        //__utils__.echo(itemNumber);
+                        //__utils__.echo(itemDesc);
                         if (!regex.test(itemNumber) && !regex.test(itemDesc)) {
                             return false;
                         }

@@ -9,5 +9,6 @@ require('./steps/goToCampaignMaintenancePage');
 require('./steps/selectAdvertisingDateAndDisplayItems');
 
 require('./steps/openEditMode');
+require('./steps/selectWithoutMHD');
 
 require('./steps/finish');
