@@ -1,7 +1,7 @@
 /**
  * In edit mode click on Without MHD and validate that all item rows with MHD in both MHD columns are hidden
  */
-casper.test.begin('Click on without MHD', function suite(test) {
+casper.test.begin('Select without MHD in edit mode', function suite(test) {
     casper.then(function () {
         var withoutMhdCheckBoxSelector = 'input[name="data-box:data-box_body:edit-mode-toolbar:edit-mode-toolbar_body:edit-mode-filter-box:no-mhd-toggle"]';
         casper.click(withoutMhdCheckBoxSelector);

@@ -1,0 +1,200 @@
+Test file: tests\251207.js
+# WFM Login
+PASS Subject is strictly true
+[11:31:45.122] Logging in
+PASS WFM Login
+# Navigate to Food Campaigns Tab
+
+[11:31:45.396] Going to Food Campaigns page
+PASS Navigate to Food Campaigns Tab
+# WFM Select Country
+
+[11:31:45.941] Selecting country
+PASS WFM Select Country
+# Navigate to Campaign Maintenance Page
+
+[11:31:46.453] Going to Campaing Maintenance
+PASS Navigate to Campaign Maintenance Page
+# Selecting Advertising Date
+
+[11:31:46.999] Selecting Advertising Date and search for items in it
+PASS Selecting Advertising Date
+# Advertising item search
+
+PASS Advertising items search tooltip is visible on mouse hover
+PASS Tooltip pop-up contains required text
+PASS Clear button is visible after typing a value in the search input
+PASS Clear button is hidden after clearing the search input
+PASS Clear button is hidden after clicking it
+PASS Search input is empty after clicking the clear button
+100010: Návrat Jediho Item 100010FZ languageID 13
+100010: Návrat Jediho Item 100010FZ languageID 13
+100010: Návrat Jediho Item 100010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+400010: Sithin İntikamı Item 400010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+600010: Item 600010FZ languageID 13
+600010: Item 600010FZ languageID 13
+700010: Item 700010FZ languageID 13
+700010: Item 700010FZ languageID 13
+700010: Item 700010FZ languageID 13
+800010: Item 800010FZ languageID 13
+800010: Item 800010FZ languageID 13
+900010: Item 900010FZ languageID 13
+900010: Item 900010FZ languageID 13
+900010: Item 900010FZ languageID 13
+PASS Items numbers or descriptions match the specified value
+PASS Advertising item search
+# Advertising item search
+
+PASS Advertising items search tooltip is visible on mouse hover
+PASS Tooltip pop-up contains required text
+PASS Clear button is visible after typing a value in the search input
+PASS Clear button is hidden after clearing the search input
+PASS Clear button is hidden after clicking it
+PASS Search input is empty after clicking the clear button
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+PASS Items numbers or descriptions match the specified value
+PASS Advertising item search
+# Finish
+
+
+PASS Finish
+PASS 15 tests executed in 3.695s, 15 passed, 0 failed, 0 dubious, 0 skipped.
+Test file: tests\251214.js
+# WFM Login
+PASS Subject is strictly true
+[11:31:50.637] Logging in
+PASS WFM Login
+# Navigate to Food Campaigns Tab
+
+[11:31:50.910] Going to Food Campaigns page
+PASS Navigate to Food Campaigns Tab
+# WFM Select Country
+
+[11:31:51.524] Selecting country
+PASS WFM Select Country
+# Navigate to Campaign Maintenance Page
+
+[11:31:52.116] Going to Campaing Maintenance
+PASS Navigate to Campaign Maintenance Page
+# Selecting Advertising Date
+
+[11:31:52.664] Selecting Advertising Date and search for items in it
+PASS Selecting Advertising Date
+# Open edit mode
+
+[11:31:53.096] Opening edit mode
+PASS Open edit mode
+# Select without MHD in edit mode
+
+PASS Item rows which have MHD in both MHD columns are hidden
+PASS Select without MHD in edit mode
+# Finish
+
+PASS Finish
+PASS 2 tests executed in 3.509s, 2 passed, 0 failed, 0 dubious, 0 skipped.
+Test file: tests\251207.js
+# WFM Login
+PASS Subject is strictly true
+[11:32:09.275] Logging in
+PASS WFM Login
+# Navigate to Food Campaigns Tab
+
+[11:32:09.550] Going to Food Campaigns page
+PASS Navigate to Food Campaigns Tab
+# WFM Select Country
+
+[11:32:10.122] Selecting country
+PASS WFM Select Country
+# Navigate to Campaign Maintenance Page
+
+[11:32:10.622] Going to Campaing Maintenance
+PASS Navigate to Campaign Maintenance Page
+# Selecting Advertising Date
+
+[11:32:11.199] Selecting Advertising Date and search for items in it
+PASS Selecting Advertising Date
+# Advertising item search
+
+PASS Advertising items search tooltip is visible on mouse hover
+PASS Tooltip pop-up contains required text
+PASS Clear button is visible after typing a value in the search input
+PASS Clear button is hidden after clearing the search input
+PASS Clear button is hidden after clicking it
+PASS Search input is empty after clicking the clear button
+100010: Návrat Jediho Item 100010FZ languageID 13
+100010: Návrat Jediho Item 100010FZ languageID 13
+100010: Návrat Jediho Item 100010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+300010: Нова надеж Item 300010FZ languageID 13
+400010: Sithin İntikamı Item 400010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+600010: Item 600010FZ languageID 13
+600010: Item 600010FZ languageID 13
+700010: Item 700010FZ languageID 13
+700010: Item 700010FZ languageID 13
+700010: Item 700010FZ languageID 13
+800010: Item 800010FZ languageID 13
+800010: Item 800010FZ languageID 13
+900010: Item 900010FZ languageID 13
+900010: Item 900010FZ languageID 13
+900010: Item 900010FZ languageID 13
+PASS Items numbers or descriptions match the specified value
+PASS Advertising item search
+# Advertising item search
+
+PASS Advertising items search tooltip is visible on mouse hover
+PASS Tooltip pop-up contains required text
+PASS Clear button is visible after typing a value in the search input
+PASS Clear button is hidden after clearing the search input
+PASS Clear button is hidden after clicking it
+PASS Search input is empty after clicking the clear button
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+500010: The Empire Strikes Back Item 500010FZ languageID 13
+PASS Items numbers or descriptions match the specified value
+PASS Advertising item search
+# Finish
+
+
+PASS Finish
+PASS 15 tests executed in 3.507s, 15 passed, 0 failed, 0 dubious, 0 skipped.
+Test file: tests\251214.js
+# WFM Login
+PASS Subject is strictly true
+[11:32:14.572] Logging in
+PASS WFM Login
+# Navigate to Food Campaigns Tab
+
+[11:32:14.844] Going to Food Campaigns page
+PASS Navigate to Food Campaigns Tab
+# WFM Select Country
+
+[11:32:15.383] Selecting country
+PASS WFM Select Country
+# Navigate to Campaign Maintenance Page
+
+[11:32:15.870] Going to Campaing Maintenance
+PASS Navigate to Campaign Maintenance Page
+# Selecting Advertising Date
+
+[11:32:16.420] Selecting Advertising Date and search for items in it
+PASS Selecting Advertising Date
+# Open edit mode
+
+[11:32:16.899] Opening edit mode
+PASS Open edit mode
+# Select without MHD in edit mode
+
+PASS Item rows which have MHD in both MHD columns are hidden
+PASS Select without MHD in edit mode
+# Finish
+
+PASS Finish
+PASS 2 tests executed in 3.411s, 2 passed, 0 failed, 0 dubious, 0 skipped.

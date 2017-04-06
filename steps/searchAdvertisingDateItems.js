@@ -42,8 +42,7 @@ var search = function (searchValue) {
                         var item = resultRows.eq(i);
                         var itemNumber = item.find('td').eq(0).text().trim();
                         var itemDesc = item.find('td').eq(1).text().trim();
-                        //__utils__.echo(itemNumber);
-                        //__utils__.echo(itemDesc);
+                        __utils__.echo(itemNumber + ': ' + itemDesc);
                         if (!regex.test(itemNumber) && !regex.test(itemDesc)) {
                             return false;
                         }
