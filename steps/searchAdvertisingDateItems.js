@@ -10,7 +10,7 @@ var search = function (searchValue) {
             var tooltipText = 'Searches advertising items by their number or description. If multiple words are given, finds all items that match at least one of the words (logical OR operation).';
             casper.mouse.move(exclamationMarkSelector);
             var tooltipSelector = 'div[id^="ui-tooltip-"][class*="ui-tooltip"]';
-            //casper.wait(500, function () {
+            //casper.wait(config.animationTime, function () {
                 test.assertVisible(tooltipSelector, 'Advertising items search tooltip is visible on mouse hover');
                 test.assertSelectorHasText(tooltipSelector, tooltipText, 'Tooltip pop-up contains required text');
             //});

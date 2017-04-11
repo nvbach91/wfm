@@ -2,6 +2,8 @@
 /**
  * Test for
  * Campaign Maintenance > Filters > Advertising Items
+ * - Display items in Advertising date
+ * - Filter items with search input 
  */
 var config = require('../config');
 require('../setup');

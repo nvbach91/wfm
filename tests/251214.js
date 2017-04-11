@@ -2,6 +2,9 @@
 /**
  * Test for
  * Campaign Maintenance > Filters > Filter in edit mode
+ * - Displays items in Advertising date
+ * - Opens edit mode
+ * - Tries to use without MHD filter
  */
 var config = require('../config');
 require('../setup');
@@ -10,6 +13,8 @@ require('../steps/goToCampaignMaintenancePage');
 require('../steps/selectAdvertisingDateAndDisplayItems');
 
 require('../steps/openEditMode');
-require('../steps/selectWithoutMHD');
+require('../steps/checkWithoutMHD');
+require('../steps/checkSeasonal');
+require('../steps/checkWeightItems');
 
 require('../steps/finish');

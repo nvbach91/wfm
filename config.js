@@ -18,10 +18,10 @@ module.exports = {
     foodCampaignTabPath         : '/web/guest/ldfc',
 
     // the advertising date to test
-    exampleAdvertisingDateDesc  : 'AD-10',
+    exampleAdvertisingDateDesc  : 'AD+0',
 
-
-
+    // animationTime - time for animations on client to finish, i.e. campaign maintenance edit mode filter
+    animationTime               : 1000,
 
 
     
