@@ -3,9 +3,10 @@
  */
 casper.test.begin('WFM Login', function suite(test) {
     casper.then(function () {
+        casper.liveCapture();
         test.assertTitleMatches(/allocation/i);
 
-casper.mlog('Logging in');
+        casper.mlog('Logging in');
         var loginInputSelector = 'input[name="_58_login"]';
         var passwordInputSelector = 'input[name="_58_password"]';
         var loginButtonSelector = 'input[name="btn_login"]';
@@ -16,9 +17,10 @@ casper.mlog('Logging in');
 
         casper.sendKeys(loginInputSelector, config.username);
         casper.sendKeys(passwordInputSelector, config.password);
+        casper.liveCapture();
         casper.click(loginButtonSelector);
 
-        casper.waitForSelector('#main-content');
+        casper.waitForSelector('#main-content').thenLiveCapture();
     }).run(function () {
         test.done();
         casper.echo('');

@@ -12,7 +12,7 @@ require('../steps/goToCampaignMaintenancePage');
 require('../steps/selectAdvertisingDateAndDisplayItems');
 
 require('../steps/searchAdvertisingDateItems').search('0');
-require('../steps/searchAdvertisingDateItems').search('5');
+require('../steps/searchAdvertisingDateItems').search('9');
 
 
 require('../steps/finish');

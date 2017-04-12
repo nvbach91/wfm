@@ -12,12 +12,21 @@ casper.mlog = function (msg) {
     casper.echo('[' + new Date().toISOString().slice(11, -1) + '] ' + msg, 'INFO'); 
 };
 
-casper.record = function () {
-    if (config.recordVideo) {
-        casper.capture(config.screenshotFilePath + 'record' + config.screenshotFileExtension);
-    }
+casper.thenLog = function (msg) {
+    casper.then(function () {
+        casper.mlog(msg);
+    });
 };
 
+casper.liveCapture = function () {
+    casper.capture(config.screenshotFilePath + 'live' + config.screenshotFileExtension);
+};
+
+casper.thenLiveCapture = function () {
+    casper.then(function () {
+        casper.liveCapture();
+    });
+};
 
 require('./steps/login');
 require('./steps/goToFoodCampaignsTab');

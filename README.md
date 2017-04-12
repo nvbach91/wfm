@@ -1,4 +1,7 @@
 "# wfm" 
+* run all tests in tests folder
+    casperjs test tests
+
 
 * to run all test cases do 
 

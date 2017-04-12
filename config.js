@@ -24,9 +24,7 @@ module.exports = {
     animationTime               : 1000,
 
 
-    
-    // wherther to capture screens at assertion steps
-    recordVideo                 : true,
+
 
     // path to save screen shots
     screenshotFilePath          : './screenshots/',

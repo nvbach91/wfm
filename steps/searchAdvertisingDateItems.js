@@ -10,10 +10,12 @@ var search = function (searchValue) {
             var tooltipText = 'Searches advertising items by their number or description. If multiple words are given, finds all items that match at least one of the words (logical OR operation).';
             casper.mouse.move(exclamationMarkSelector);
             var tooltipSelector = 'div[id^="ui-tooltip-"][class*="ui-tooltip"]';
-            //casper.wait(config.animationTime, function () {
+            casper.wait(config.animationTime, function () {
+                casper.liveCapture();
                 test.assertVisible(tooltipSelector, 'Advertising items search tooltip is visible on mouse hover');
                 test.assertSelectorHasText(tooltipSelector, tooltipText, 'Tooltip pop-up contains required text');
-            //});
+                casper.mouse.move('body');
+            });
 
             var searchInputSelector = '.item-search input[name="item-search:advertising-item-search"]';
 
@@ -21,11 +23,14 @@ var search = function (searchValue) {
             var searchInputClearButtonSelector = '#campaign_items_filter .clear-text-button';
             casper.sendKeys(searchInputSelector, searchValue, {reset: true});
             test.assertVisible(searchInputClearButtonSelector, 'Clear button is visible after typing a value in the search input');
+
             casper.sendKeys(searchInputSelector, '', {reset: true});
             test.assertNotVisible(searchInputClearButtonSelector, 'Clear button is hidden after clearing the search input');
+
             casper.sendKeys(searchInputSelector, searchValue, {reset: true});
             casper.click(searchInputClearButtonSelector);
             test.assertNotVisible(searchInputClearButtonSelector, 'Clear button is hidden after clicking it');
+
             test.assertEvalEquals(function (sis) {
                 return jQuery(sis).val();
             }, '', 'Search input is empty after clicking the clear button', searchInputSelector);
@@ -49,12 +54,12 @@ var search = function (searchValue) {
                     }
                     return true;
                 }, "Items numbers or descriptions match the specified value", searchValue);
-            });
+            }).thenLiveCapture();
         }).run(function () {
             test.done();
             casper.echo('');
         });
     });
-}
+};
 
 exports.search = search;
