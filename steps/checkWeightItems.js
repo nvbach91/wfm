@@ -1,5 +1,6 @@
 /**
- * In edit mode click on Without MHD and validate that all item rows with MHD in both MHD columns are hidden
+ * In edit mode click on weight-item checkbox and validate that item rows are hidden / shown
+ * only works individually (no other filters are applied)
  */
 casper.test.begin('Testing weight-items filter in edit mode', function suite(test) {
     var weightItemCheckBoxSelector = 'input[name="data-box:data-box_body:edit-mode-toolbar:edit-mode-toolbar_body:edit-mode-filter-box:weight-item-toggle"]';

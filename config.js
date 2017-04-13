@@ -17,14 +17,14 @@ module.exports = {
     // the url path of the module for testing
     foodCampaignTabPath         : '/web/guest/ldfc',
 
-    // the advertising date to test
-    exampleAdvertisingDateDesc  : 'AD+0',
+    // for ajax calls waits
+    globalAjaxIndicatorSelector : '.wfm-global-ajax-indicator',
+
+    // live capturing
+    liveCapture                 : true,
 
     // animationTime - time for animations on client to finish, i.e. campaign maintenance edit mode filter
     animationTime               : 1000,
-
-
-
 
     // path to save screen shots
     screenshotFilePath          : './screenshots/',

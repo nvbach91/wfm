@@ -10,7 +10,7 @@ var config = require('../config');
 require('../setup');
 
 require('../steps/goToCampaignMaintenancePage');
-require('../steps/selectAdvertisingDateAndDisplayItems');
+require('../steps/selectAdvertisingDateAndDisplayItems').searchAllAdvertisingDateItems('AD-4');
 
 require('../steps/openEditMode');
 require('../steps/checkWithoutMHD');

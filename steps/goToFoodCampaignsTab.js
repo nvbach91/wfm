@@ -7,7 +7,9 @@ casper.test.begin('Navigate to Food Campaigns Tab', function suite(test) {
         casper.mlog('Going to Food Campaigns page');
         casper.click('#wfm-portal-menu a[href="' + config.foodCampaignTabPath + '"]');
         casper.waitForSelector('select[name="country-division-selection"]').thenLiveCapture();
-    }).run(function () {
+    });
+    
+    casper.run(function () {
         test.done();
         casper.echo('');
     });

@@ -17,7 +17,9 @@ var select = function (countryId) {
                 jQuery('select[name="country-division-selection"]').val(cId).parent().submit();
             }, countryId);
             casper.waitForSelector('select[name="country-division-selection"] option[selected][value="' + countryId + '"]').thenLiveCapture();
-        }).run(function () {
+        });
+        
+        casper.run(function () {
             test.done();
             casper.echo('');
         });

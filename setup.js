@@ -19,7 +19,9 @@ casper.thenLog = function (msg) {
 };
 
 casper.liveCapture = function () {
-    casper.capture(config.screenshotFilePath + 'live' + config.screenshotFileExtension);
+    if (config.liveCapture) {
+        casper.capture(config.screenshotFilePath + 'live' + config.screenshotFileExtension);
+    }
 };
 
 casper.thenLiveCapture = function () {

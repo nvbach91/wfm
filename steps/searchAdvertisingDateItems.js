@@ -39,7 +39,7 @@ var search = function (searchValue) {
             
             // testing search input for advertising item
             casper.clickLabel('Search', 'span');
-            casper.waitWhileVisible('.wfm-global-ajax-indicator', function () {
+            casper.waitWhileVisible(config.globalAjaxIndicatorSelector, function () {
                 var eval = test.assertEval(function (sv) {
                     var resultRows = jQuery('.wfm-fc-campaign-items-panel-item-row');
                     var regex = new RegExp(sv);
@@ -55,7 +55,9 @@ var search = function (searchValue) {
                     return true;
                 }, "Items numbers or descriptions match the specified value", searchValue);
             }).thenLiveCapture();
-        }).run(function () {
+        });
+        
+        casper.run(function () {
             test.done();
             casper.echo('');
         });

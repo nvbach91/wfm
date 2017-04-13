@@ -4,8 +4,10 @@
 casper.test.begin('Finish', function suite(test) {
     casper.then(function () {
         casper.capture(config.screenshotFilePath + 'finish' + config.screenshotFileExtension);
-    }).run(function () {
-        casper.echo('');
+    })
+    
+    casper.run(function () {
         test.done();
+        casper.echo('');
     });
 });

@@ -21,7 +21,9 @@ casper.test.begin('WFM Login', function suite(test) {
         casper.click(loginButtonSelector);
 
         casper.waitForSelector('#main-content').thenLiveCapture();
-    }).run(function () {
+    });
+    
+    casper.run(function () {
         test.done();
         casper.echo('');
     });
