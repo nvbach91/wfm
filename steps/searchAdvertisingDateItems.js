@@ -39,22 +39,22 @@ var search = function (searchValue) {
             
             // testing search input for advertising item
             casper.clickLabel('Search', 'span');
-            casper.waitWhileVisible(config.globalAjaxIndicatorSelector, function () {
-                var eval = test.assertEval(function (sv) {
-                    var resultRows = jQuery('.wfm-fc-campaign-items-panel-item-row');
-                    var regex = new RegExp(sv);
-                    for (var i = 0; i < resultRows.size(); i++) {
-                        var item = resultRows.eq(i);
-                        var itemNumber = item.find('td').eq(0).text().trim();
-                        var itemDesc = item.find('td').eq(1).text().trim();
-                        __utils__.echo(itemNumber + ': ' + itemDesc);
-                        if (!regex.test(itemNumber) && !regex.test(itemDesc)) {
-                            return false;
-                        }
+            casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
+            casper.thenAssertEval(test, function (sv) {
+                var resultRows = jQuery('.wfm-fc-campaign-items-panel-item-row');
+                var regex = new RegExp(sv);
+                for (var i = 0; i < resultRows.size(); i++) {
+                    var item = resultRows.eq(i);
+                    var itemNumber = item.find('td').eq(0).text().trim();
+                    var itemDesc = item.find('td').eq(1).text().trim();
+                    __utils__.echo(itemNumber + ': ' + itemDesc);
+                    if (!regex.test(itemNumber) && !regex.test(itemDesc)) {
+                        return false;
                     }
-                    return true;
-                }, "Items numbers or descriptions match the specified value", searchValue);
-            }).thenLiveCapture();
+                }
+                return true;
+            }, 'Items numbers or descriptions match the specified value', searchValue);
+            casper.thenLiveCapture();
         });
         
         casper.run(function () {

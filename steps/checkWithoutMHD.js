@@ -33,18 +33,14 @@ casper.test.begin('Testing without MHD filter in edit mode', function suite(test
     casper.thenLog('Checking without MHD checkbox');
     casper.thenClick(withoutMhdCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Item rows which have MHD in both MHD columns are hidden', withoutMhdCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Item rows which have MHD in both MHD columns are hidden', withoutMhdCheckBoxSelector);
 
     casper.thenLog('Unchecking without MHD checkbox');
     casper.thenClick(withoutMhdCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Item rows which have MHD in both MHD columns are shown', withoutMhdCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Item rows which have MHD in both MHD columns are shown', withoutMhdCheckBoxSelector);
 
     casper.run(function () {
         test.done();

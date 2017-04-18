@@ -33,18 +33,14 @@ casper.test.begin('Testing weight-items filter in edit mode', function suite(tes
     casper.thenLog('Checking weight-items checkbox');
     casper.thenClick(weightItemCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Item rows which don\'t have have weight value and don\'t have weightItem flag are hidden', weightItemCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Item rows which don\'t have have weight value and don\'t have weightItem flag are hidden', weightItemCheckBoxSelector);
 
     casper.thenLog('Unchecking weight-items checkbox');
     casper.thenClick(weightItemCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Item rows which don\'t have have weight value and don\'t have weightItem flag are visible', weightItemCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Item rows which don\'t have have weight value and don\'t have weightItem flag are visible', weightItemCheckBoxSelector);
 
     casper.run(function () {
         test.done();

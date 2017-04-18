@@ -30,6 +30,28 @@ casper.thenLiveCapture = function () {
     });
 };
 
+casper.thenClickLabel = function (label, tag) {
+    casper.then(function () {
+        casper.clickLabel(label, tag);
+    });
+};
+
+casper.warnNoDataToTest = function () {
+    casper.echo(
+    '/////////////////////////////// NO DATA TO TEST ////////////////////////////////'
+    , 'WARN_BAR');
+};
+
+casper.thenAssertEval = function (test, eval, msg, args) {
+    casper.then(function () {
+        test.assertEval(eval, msg, args);
+    });
+};
+
+casper.randomIntBetween = function (min, max) {
+    return Math.floor(Math.random() * max) + min; 
+}
+
 require('./steps/login');
 require('./steps/goToFoodCampaignsTab');
 require('./steps/selectCountry').select(config.countryId);

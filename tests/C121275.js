@@ -12,6 +12,7 @@ require('../setup');
 require('../steps/goToCampaignMaintenancePage');
 require('../steps/selectAdvertisingDateAndDisplayItems').searchAllAdvertisingDateItems('AD-4');
 
+// IMPORTANT: use an advertising date with mixed MHD, Seasonal, weight items for better results
 require('../steps/openEditMode');
 require('../steps/checkWithoutMHD');
 require('../steps/checkSeasonal');

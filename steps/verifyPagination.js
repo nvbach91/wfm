@@ -37,13 +37,13 @@ casper.test.begin('Testing pagination if exists', function suite(test) {
             casper.thenLiveCapture();
             casper.then(function () {
                 test.assertDoesntExist('a[title="Go to last page"]', 'Last pagination link is disabled on the last page');
-                test.assertDoesntExist('a[title="Go to next page"]', 'Next pagination link is disabled on the first page');
+                test.assertDoesntExist('a[title="Go to next page"]', 'Next pagination link is disabled on the last page');
             });
             
             casper.thenLog('Go to first pagination');
             casper.thenClick('a[title="Go to first page"]');
             casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
-            casper.liveCapture();
+            casper.thenLiveCapture();
             casper.then(function () {
                 test.assertDoesntExist('a[title="Go to first page"]', 'First pagination link is disabled on the first page');
                 test.assertDoesntExist('a[title="Go to previous page"]', 'Previous pagination link is disabled on the first page');
@@ -53,37 +53,36 @@ casper.test.begin('Testing pagination if exists', function suite(test) {
             casper.thenClick('a[title="Go to next page"]');
             casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
             casper.thenLiveCapture();
-            casper.then(function () {
-                test.assertEval(function () {
-                    var navigationLinks = jQuery('.wfm-campaigndb-maintenance-campaign-items-toolbar-table').find('div').children();
-                    if (navigationLinks.eq(3).find('a').size()) {
-                        return false;
-                    }
-                    return true;
-                }, 'The current pagination link is disabled');
-            });
+            casper.thenAssertEval(test, function () {
+                var navigationLinks = jQuery('.wfm-campaigndb-maintenance-campaign-items-toolbar-table').find('div').children();
+                if (navigationLinks.eq(3).find('a').size()) {
+                    return false;
+                }
+                return true;
+            }, 'The current pagination link is disabled');
             
-            casper.thenLog('Go to pagination number ' + nPaginations);
-            casper.thenClick('a[title="Go to page ' + nPaginations + '"]');
-            casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
-            casper.then(function () {
-                test.assertEval(function (pn) {
+            if (nPaginations > 3) {
+                casper.thenLog('Go to specific pagination number ' + nPaginations);
+                casper.thenClick('a[title="Go to page ' + nPaginations + '"]');
+                casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
+                casper.thenLiveCapture();
+                casper.thenAssertEval(test, function (pn) {
                     return jQuery('.wfm-campaigndb-maintenance-campaign-items-toolbar-table').find('span[title="Go to page ' + pn + '"]').size() === 1;
                 }, 'The specific pagination link is disabled', nPaginations);
-            });
+            }
 
             if (nPaginations > 2) {
                 var specificPagination = nPaginations - 1;
-                casper.thenLog('Go to pagination number ' + specificPagination);
+                casper.thenLog('Go to specific pagination number ' + specificPagination);
                 casper.thenClick('a[title="Go to page ' + specificPagination + '"]');
                 casper.waitWhileVisible(config.globalAjaxIndicatorSelector);
-                casper.then(function () {
-                    test.assertEval(function (pn) {
-                        return jQuery('.wfm-campaigndb-maintenance-campaign-items-toolbar-table').find('span[title="Go to page ' + pn + '"]').size() === 1;
-                    }, 'The specific pagination link is disabled', specificPagination);
-                });
-
+                casper.thenLiveCapture();
+                casper.thenAssertEval(test, function (pn) {
+                    return jQuery('.wfm-campaigndb-maintenance-campaign-items-toolbar-table').find('span[title="Go to page ' + pn + '"]').size() === 1;
+                }, 'The specific pagination link is disabled', specificPagination);
             }
+
+            // TODO ? verify pagionation content
         }
 
     });

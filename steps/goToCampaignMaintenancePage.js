@@ -7,6 +7,9 @@ casper.test.begin('Navigate to Campaign Maintenance Page', function suite(test) 
         casper.mlog('Going to Campaing Maintenance');
         casper.clickLabel('Campaign Maintenance', 'a');
         casper.waitForSelector('ul.wfm-menu-list li.wfm-menu-active div span em');
+        casper.thenAssertEval(test, function () {
+            return jQuery('.tab0.selected').text().trim() === 'Campaign Items';
+        }, 'Campaign Items tab is pre selected [C137940]');
     });
     
     casper.run(function () {

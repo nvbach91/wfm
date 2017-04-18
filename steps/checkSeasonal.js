@@ -31,18 +31,14 @@ casper.test.begin('Testing seasonal items filter in edit mode', function suite(t
     casper.thenLog('Checking seasonal filter checkbox');
     casper.thenClick(seasonalCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Non seasonal items are hidden', seasonalCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Non seasonal items are hidden', seasonalCheckBoxSelector);
 
     casper.thenLog('Unchecking seasonal filter checkbox');
     casper.thenClick(seasonalCheckBoxSelector);
     casper.wait(config.animationTime);
-    casper.then(function () {
-        casper.liveCapture();
-        test.assertEval(checkItemRowsVisibility, 'Non seasonal items are shown', seasonalCheckBoxSelector);
-    });
+    casper.thenLiveCapture();
+    casper.thenAssertEval(test, checkItemRowsVisibility, 'Non seasonal items are shown', seasonalCheckBoxSelector);
     
     casper.run(function () {
         test.done();
