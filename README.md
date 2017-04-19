@@ -6,9 +6,9 @@
 
 **USAGE:**
 
-* to run single test in tests folder, do
-    ```{r, engine='bash', all_tests_separately}
-    casperjs test tests\251214.js
+* to run single test file in the ```tests``` folder, do
+    ```{r, engine='bash', single_test}
+    casperjs test tests\C1001.js
     ```
     
 
@@ -19,15 +19,14 @@
 
 
 * to run all test cases separately and log the output to a file, do
-    ```{r, engine='bash', all_tests_separately}
+    ```{r, engine='bash', all_tests_separately_log_file}
     for %i in (tests\*.js) do casperjs --no-colors test "%~i" >> results.log
     ```
 
 
-* to watch live screenshots, open ./screenshots/live.png in an image viewer that can autorefresh on file change
+* to watch live screenshots, open ```.\screenshots\live.png``` in an image viewer that can autorefresh on file change, for example:
     - [Visual Studio Code](https://code.visualstudio.com)
     - [Atom](https://atom.io)
-
 
 
 **AUTOMATED TEST CASES**
