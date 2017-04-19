@@ -50,7 +50,13 @@ casper.thenAssertEval = function (test, eval, msg, args) {
 
 casper.randomIntBetween = function (min, max) {
     return Math.floor(Math.random() * max) + min; 
-}
+};
+
+casper.thenSendKeys = function (css, string, options) {
+    casper.then(function () {
+        casper.sendKeys(css, string, options);
+    });
+};
 
 require('./steps/login');
 require('./steps/goToFoodCampaignsTab');
