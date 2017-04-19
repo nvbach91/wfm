@@ -9,7 +9,10 @@ var config = require('../config');
 require('../setup');
 
 require('../steps/goToCampaignMaintenancePage');
+
+// IMPORTANT: use and AD with many paginations for better test results
 require('../steps/selectAdvertisingDateAndDisplayItems').searchAllAdvertisingDateItems('AD-24');
+
 require('../steps/verifyPagination');
 
 require('../steps/finish');

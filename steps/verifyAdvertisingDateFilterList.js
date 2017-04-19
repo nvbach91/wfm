@@ -5,9 +5,9 @@
 casper.test.begin('Advertising dates filter', function suite(test) {
     casper.thenAssertEval(test, function () {
         var advertisingDateSelectList = jQuery('[name="advertising-date-select"]');
-        var isSelectedFirstItem = advertisingDateSelectList.children().eq(0).is(":selected");
+        var isSelectedFirstItem = advertisingDateSelectList.children().eq(0).is(':selected');
         return isSelectedFirstItem;
-    }, "Default selected Advertising date is set to the first Advertising date on the list");
+    }, 'Default selected Advertising date is set to the first Advertising date on the list');
     
     casper.then(function () {
         // TODO ASSERT (advertising dates start dates are not available)

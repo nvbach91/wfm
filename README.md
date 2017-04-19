@@ -23,6 +23,13 @@
     for %i in (tests\*.js) do casperjs --no-colors test "%~i" >> results.log
     ```
 
+
+* to watch live screenshots, open ./screenshots/live.png in an image viewer that can autorefresh on file change
+    - [Visual Studio Code](https://code.visualstudio.com)
+    - [Atom](https://atom.io)
+
+
+
 **AUTOMATED TEST CASES**
 * [C137940](http://wfmtestrailvm/testrail/index.php?/cases/view/137940)
 * [C1001](http://wfmtestrailvm/testrail/index.php?/cases/view/1001)

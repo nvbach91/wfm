@@ -9,6 +9,7 @@ casper.test.begin('Navigate to Campaign Maintenance Page', function suite(test) 
     casper.thenAssertEval(test, function () {
         return jQuery('.tab0.selected').text().trim().toLowerCase() === 'campaign items';
     }, 'Campaign Items tab is pre selected');
+    casper.thenLiveCapture();
     
     casper.run(function () {
         test.done();
