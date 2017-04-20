@@ -37,14 +37,28 @@ casper.thenClickLabel = function (label, tag) {
 };
 
 casper.warnNoDataToTest = function () {
-    casper.echo(
-    '/////////////////////////////// NO DATA TO TEST ////////////////////////////////'
-    , 'WARN_BAR');
+    casper.then(function () {
+        casper.echo(
+        '/////////////////////////////// NO DATA TO TEST ////////////////////////////////'
+        , 'WARN_BAR');
+    });
 };
 
 casper.thenAssertEval = function (test, eval, msg, args) {
     casper.then(function () {
         test.assertEval(eval, msg, args);
+    });
+};
+
+casper.thenAssertExists = function (test, selector, msg) {
+    casper.then(function () {
+        test.assertExists(selector, msg);
+    });
+};
+
+casper.thenAssertDoesntExist = function (test, selector, msg) {
+    casper.then(function () {
+        test.assertDoesntExist(selector, msg);
     });
 };
 

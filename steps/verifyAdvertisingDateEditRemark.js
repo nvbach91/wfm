@@ -2,7 +2,7 @@
  * Enter some values to the AD Remark input and try to save
  * Needs the Edit modal box to be opened first
  */
-casper.test.begin('Testing connection to add new item in master data', function suite(test) {
+casper.test.begin('Testing campaign maintenance edit advertising date remark', function suite(test) {
     var generateRandomString = function (length) {
         var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         var s = '';
